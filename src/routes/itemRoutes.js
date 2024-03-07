@@ -1,6 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const Item = require('../models/itemModel');
+const authenticate = require('../middleware/authenticate');
+const authorize = require('../middleware/authorize');
+
+// router.post('/', authenticate, authorize(['admin']), async (req, res) => {
+//     // Your create logic
+// });
+
 
 // Create
 router.post('/', async (req, res) => {
